@@ -9,12 +9,14 @@ public class Personaje {
 	private int puntosVida;
 	private int puntosObt;
 	private String [] mochila;
+	private int puntosFuerza;
 	
 	public Personaje(String nombre) {
 		super();
 		this.nombre = nombre;
 		this.puntosVida = 100;
 		this.puntosObt = 0;
+		//this.mochila[] = {"Botiquin, Espada"};
 	}
 	
 	public Personaje() {
@@ -49,12 +51,21 @@ public class Personaje {
 		return mochila;
 	}
 
+	
+	public int getPuntosFuerza() {
+		return puntosFuerza;
+	}
+
+	public void setPuntosFuerza(int puntosFuerza) {
+		this.puntosFuerza = puntosFuerza;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Arrays.hashCode(mochila);
-		result = prime * result + Objects.hash(nombre, puntosObt, puntosVida);
+		result = prime * result + Objects.hash(nombre, puntosFuerza, puntosObt, puntosVida);
 		return result;
 	}
 
@@ -68,15 +79,15 @@ public class Personaje {
 			return false;
 		Personaje other = (Personaje) obj;
 		return Arrays.equals(mochila, other.mochila) && Objects.equals(nombre, other.nombre)
-				&& puntosObt == other.puntosObt && puntosVida == other.puntosVida;
+				&& puntosFuerza == other.puntosFuerza && puntosObt == other.puntosObt && puntosVida == other.puntosVida;
 	}
 
 	@Override
 	public String toString() {
 		return "Personaje [nombre=" + nombre + ", puntosVida=" + puntosVida + ", puntosObt=" + puntosObt + ", mochila="
-				+ Arrays.toString(mochila) + "]";
+				+ Arrays.toString(mochila) + ", puntosFuerza=" + puntosFuerza + "]";
 	}
-	
+
 	public int agregarAMochila(String herramienta) {
 		if(mochila.length==10) {
 			System.out.println("YA NO PUEDES CONSEGUIR MÁS ELEMENTOS PUES TU MOCHILA ESTÁ COMPLETA");
