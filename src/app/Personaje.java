@@ -100,5 +100,16 @@ public class Personaje {
 		}
 	}
 	
+	public int curar() {
+		for(int i=0;i<mochila.length;i++) {
+			if(mochila[i].compareToIgnoreCase("Botiquin")==0) {
+				puntosVida+=10;
+			}else {
+				System.out.println("LO SIENTO, PERO NO TIENES NINGUNA POCIÓN DE BOTIQUÍN");
+			}
+		}
+		return puntosVida;
+	}
+	
 	
 }
