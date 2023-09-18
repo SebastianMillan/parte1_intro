@@ -6,7 +6,7 @@ public class Batalla {
 	
 	public static Personaje luchar(Personaje luchador1, Personaje luchador2) {
 		Random rnd = new Random();
-		int golpe = rnd.nextInt(3-1)+1;
+		int golpe = rnd.nextInt(3-1+1)+1;
 		while(luchador1.getPuntosVida()>0 && luchador2.getPuntosVida()>0) {
 			if(luchador1.getPuntosVida()<=30) {
 				System.out.println("Jugador 1 curado: "+luchador1.curar());

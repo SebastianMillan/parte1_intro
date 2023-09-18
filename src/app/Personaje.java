@@ -3,7 +3,7 @@ package app;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Personaje {
+public class Personaje implements Habilidad, PuedeVolar, PuedeVolverseInvisible{
 
 	private String nombre;
 	private int puntosVida;
@@ -16,7 +16,7 @@ public class Personaje {
 		this.nombre = nombre;
 		this.puntosVida = 100;
 		this.puntosObt = 0;
-		//this.mochila[] = {"Botiquin, Espada"};
+		//this.mochila[] = new 
 	}
 	
 	public Personaje() {
@@ -121,6 +121,37 @@ public class Personaje {
 		}
 		return puntosVida;
 	}
+
+	@Override
+	public void saltar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void desaparecer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void aparecer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void volar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void aterrizar() {
+		// TODO Auto-generated method stub
+		
+	}	
+	
 	
 	
 }
