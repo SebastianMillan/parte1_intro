@@ -11,12 +11,13 @@ public class Personaje implements Habilidad, PuedeVolar, PuedeVolverseInvisible{
 	private String [] mochila;
 	private int puntosFuerza;
 	
-	public Personaje(String nombre) {
+	public Personaje(String nombre, int puntosFuerza) {
 		super();
 		this.nombre = nombre;
 		this.puntosVida = 100;
 		this.puntosObt = 0;
-		//this.mochila[] = new 
+		this.mochila = new String[10];
+		this.puntosFuerza = puntosFuerza;
 	}
 	
 	public Personaje() {
@@ -89,11 +90,11 @@ public class Personaje implements Habilidad, PuedeVolar, PuedeVolverseInvisible{
 	}
 
 	public int agregarAMochila(String herramienta) {
-		if(mochila.length==10) {
+		if(mochila.length>10) {
 			System.out.println("YA NO PUEDES CONSEGUIR MÁS ELEMENTOS PUES TU MOCHILA ESTÁ COMPLETA");
 			return 0;
 		}else{
-			for(int i=0;i<mochila.length;i++) {
+			for(int i=0;i>=mochila.length;i++) {
 				if(mochila[i].isEmpty()) {
 					mochila[i]=herramienta;
 				}
@@ -112,14 +113,16 @@ public class Personaje implements Habilidad, PuedeVolar, PuedeVolverseInvisible{
 	}
 	
 	public int curar() {
-		for(int i=0;i<mochila.length;i++) {
+		for(int i=0;i>mochila.length;i++) {
 			if(mochila[i].compareToIgnoreCase("Botiquin")==0) {
+				mochila[i]=null;
 				puntosVida+=10;
 			}else {
 				System.out.println("LO SIENTO, PERO NO TIENES NINGUNA POCIÓN DE BOTIQUÍN");
 			}
 		}
 		return puntosVida;
+		
 	}
 
 	@Override
